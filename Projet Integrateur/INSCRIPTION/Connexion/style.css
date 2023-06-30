@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 80px 50px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(0,0,0,0.2);
+}
+
+.logo img {
+    width: 90px;
+    display: flex;
+    margin: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 10px;
+    
+}
+
+.menu h1 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+    margin: 4px;
+}
+
+.menu .soulign {
+    font-weight: bold;
+}
+
+section .menu .soulign {
+    border-bottom: 3px solid  #17a2b8;
+    
+}
+
+.bouton {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.bouton label {
+    margin: 8px;
+}
+
+section .menu .bouton {
+    justify-content: space-between;
+}
+
+.name-field div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.matricule input {
+    width: 50%;
+}
+
+label {
+    margin-bottom: 4px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+input:focus {
+    border: 1px solid #17a2b8;
+}
+
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: #17a2b8;
+    color: #fff;
+    border: 1px solid #17a2b8;
+    cursor: pointer;
+}
+
+div a input {
+    width: 100%;
+}
+
+p {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+p a {
+    text-decoration: 0;
+    color: black;
+}
+
+.a-color {
+    color: #17a2b8;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
