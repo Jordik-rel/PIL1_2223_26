@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>emploi du temps</title>
+  <link rel="stylesheet" href="{%static 'projetept/css/bootstrap.css'%}">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron row-lg-10">
+      <div class="col-lg-5">
+        <button class="btn btn-success">
+          <a href="{% url 'l5_im' %}">
+            <h3>Internet Multimedia</h3>
+          </a></button>
+      </div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-5">
+        <button class="btn btn-success">
+          <a href="{% url 'l5_ia' %}">
+            <h3>Intelligence Artificiel</h3>
+          </a></button>
+      </div>
+
+      </div>
+    </div>
+    <div class="jumbotron row-lg-10">
+      <div class="col-lg-5">
+        <button class="btn btn-success">
+          <a href="{% url 'l5_si' %}">
+            <h3>Securité Informatique</h3>
+          </a></button>
+      </div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-5">
+        <button class="btn btn-success">
+          <a href="{% url 'l5_seiot' %}">
+            <h3>S E I O T</h3>
+          </a></button>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="{% static 'projetept/js/jquery.js'%}"></script>
+  <script src="{% static 'projetept/js/bootstrap.js'%}"></script>
+  <script src="{% static 'projetept/js/popper.js'%}"></script>
+</body>
+
+</html>

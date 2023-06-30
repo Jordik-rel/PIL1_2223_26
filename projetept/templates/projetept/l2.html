@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>emploi du temps</title>
+    <link rel="stylesheet" href="{%static 'projetept/css/bootstrap.css'%}">
+
+</head>
+
+<body style="background-color: #f0e8e8;">
+    <header>
+        <h1 class="text-center " style="font-family: Georgia, 'Times New Roman', Times, serif;color: black;">EMPLOI DU
+            TEMPS</h1>
+    </header>
+    <hr>
+    <h2 style="border: 1px,solid;background-color: #fff;padding: 10px;width: 50%;margin-left: 25%;">Date: du {{jours.Date_semaine}} 
+    </h2>
+    <div class="col-lg-12">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" class="alert alert-success">LUNDI</th>
+                    <th scope="col" class="alert alert-danger">MARDI</th>
+                    <th scope="col" class="alert alert-warning">MERCREDI</th>
+                    <th scope="col" class="alert alert-primary">JEUDI</th>
+                    <th scope="col" class="alert alert-info">VENDREDI</th>
+                    <th scope="col" class="alert alert-dark">SAMEDI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="alert alert-danger">
+                    <td class="alert alert-success">
+                        {% for semestre in jours %}
+                          <div class="jumbotron">
+                            <h2>HORRAIRE</h2> <br>
+                            <h3> {{semestre.Heure_debut}} /  {{semestre.Heure_fin}} <br></h3>
+                            <h2>MATIERE</h2> <br>
+                            <h3> {{semestre.Matiere}} </h3><br>
+                            <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre.Nom_Prenom_Prof}} </h3><br>
+                            <h2>Horraire total</h2> <br>
+                            <h3> {{semestre.Heure_Restant}} /  {{semestre.Heure_Total}} <br></h3>
+                          </div>
+                                                  
+                        {% endfor %}
+                    </td>
+                    <td class="alert alert-danger"> {% for semestre1 in jours1 %}
+                        <div class="jumbotron">
+                          <h2>HORRAIRE</h2> <br>
+                          <h3> {{semestre1.Heure_debut}} /  {{semestre1.Heure_fin}} <br></h3>
+                          <h2>MATIERE</h2> <br>
+                          <h3> {{semestre1.Matiere}} </h3><br>
+                          <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre1.Nom_Prenom_Prof}} <br></h3>
+                          <h2>Horraire total</h2> <br>
+                          <h3> {{semestre1.Heure_Restant}} /  {{semestre1.Heure_Total}} <br></h3>
+                        </div>
+                                                
+                      {% endfor %}</td>
+                    <td class="alert alert-warning"> {% for semestre2 in jours2 %}
+                        <div class="jumbotron">
+                          <h2>HORRAIRE</h2> <br>
+                          <h3> {{semestre2.Heure_debut}} /  {{semestre2.Heure_fin}} <br></h3>
+                          <h2>MATIERE</h2> <br>
+                          <h3> {{semestre2.Matiere}}</h3><br>
+                          <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre2.Nom_Prenom_Prof}} </h3><br>
+                          <h2>Horraire total</h2> <br>
+                          <h3> {{semestre2.Heure_Restant}} /  {{semestre2.Heure_Total}} <br></h3>
+                        </div>
+                                                
+                      {% endfor %}</td>
+                    <td class="alert alert-primary"> {% for semestre3 in jours3 %}
+                        <div class="jumbotron">
+                          <h2>HORRAIRE</h2> <br>
+                          <h3> {{semestre3.Heure_debut}} /  {{semestre3.Heure_fin}} </h3><br>
+                          <h2>MATIERE</h2> <br>
+                          <h3> {{semestre3.Matiere}} </h3><br>
+                          <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre3.Nom_Prenom_Prof}} </h3><br>
+                          <h2>Horraire total</h2> <br>
+                          <h3> {{semestre3.Heure_Restant}} /  {{semestre3.Heure_Total}} </h3><br>
+                        </div>
+                                                
+                      {% endfor %}</td>
+                    <td class="alert alert-info"> {% for semestre4 in jours4 %}
+                        <div class="jumbotron">
+                          <h2>HORRAIRE</h2><br>
+                          <h3> {{semestre4.Heure_debut}} /  {{semestre4.Heure_fin}} </h3><br>
+                          <h2>MATIERE</h2> <br>
+                          <h3> {{semestre4.Matiere}} </h3><br>
+                          <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre4.Nom_Prenom_Prof}} </h3><br>
+                          <h2>Horraire total</h2> <br>
+                          <h3> {{semestre4.Heure_Restant}} /  {{semestre4.Heure_Total}} </h3><br>
+                        </div>
+                                                
+                      {% endfor %}</td>
+                    <td class="alert alert-dark"> {% for semestre5 in jours5 %}
+                        <div class="jumbotron">
+                          <h2>HORRAIRE</h2> <br>
+                          <h3> {{semestre5.Heure_debut}} /  {{semestre5.Heure_fin}} </h3><br>
+                          <h2>MATIERE</h2> <br>
+                          <h3> {{semestre5.Matiere}} </h3><br>
+                          <h2>PROFESSEUR</h2> <br>
+                          <h3> {{semestre5.Nom_Prenom_Prof}} </h3><br>
+                          <h2>Horraire total</h2> <br>
+                          <h3> {{semestre5.Heure_Restant}} /  {{semestre5.Heure_Total}} </h3><br>
+                        </div>
+                                                
+                      {% endfor %}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+    <script src="{% static 'projetept/js/jquery.js'%}"></script>
+    <script src="{% static 'projetept/js/bootstrap.js'%}"></script>
+    <script src="{% static 'projetept/js/popper.js'%}"></script>
+</body>
+
+</html>
