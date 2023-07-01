@@ -194,6 +194,7 @@ def mdp(request):
 
 def administration(request):
   formulaire=administrat
+  erreur=False
   message=''
   if request.method== 'POST':
      formulaire=administrat(request.POST)
@@ -202,12 +203,15 @@ def administration(request):
      if administrations.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw).exists():
        return redirect('adm')
      else:
-      message='erreur, Vous n\'etes pas dans la base de donnée'
+      message='erreur, Vous n etes pas dans la base de donnée'
+      erreur=True
      
-  return render(request,'projetept/index.html',{'etud':formulaire,'erreur':message})
+  return render(request,'projetept/index.html',{'etud':formulaire,'erreur':message,'warn':erreur})
 
 def etudian(request):
   formulaire=etudiants_connexion
+  erreur=False
+  message=''
   if request.method== 'POST':
      formulaire=etudiants_connexion(request.POST)
      utilisateur=request.POST['Num_Matricule']
@@ -225,5 +229,7 @@ def etudian(request):
         return redirect('licence3')
        elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='6').exists():
         return redirect('licence3')
-     
-  return render(request,'projetept/index2.html',{'etud':formulaire})
+     else:
+      message='erreur, Vous n etes pas dans la base de donnée'
+      erreur=True
+  return render(request,'projetept/index2.html',{'etud':formulaire,'erreur':message,'warn':erreur})
