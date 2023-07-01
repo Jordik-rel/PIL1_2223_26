@@ -202,3 +202,25 @@ def administration(request):
        return redirect('adm')
      
   return render(request,'projetept/index.html',{'etud':formulaire})
+
+def etudian(request):
+  formulaire=etudiants_connexion
+  if request.method== 'POST':
+     formulaire=etudiants_connexion(request.POST)
+     utilisateur=request.POST['Num_Matricule']
+     psw=request.POST['Mot_De_Passe']
+     if etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw).exists():
+       if etudiant.objects.filter(semestres='1').exists():
+        return redirect('licence1')
+       if etudiant.objects.filter(semestres='2').exists():
+        return redirect('licence1')
+       if etudiant.objects.filter(semestres='3').exists():
+        return redirect('licence2')
+       if etudiant.objects.filter(semestres='4').exists():
+        return redirect('licence2')
+       if etudiant.objects.filter(semestres='5').exists():
+        return redirect('licence3')
+       if etudiant.objects.filter(semestres='5').exists():
+        return redirect('licence3')
+     
+  return render(request,'projetept/index2.html',{'etud':formulaire})

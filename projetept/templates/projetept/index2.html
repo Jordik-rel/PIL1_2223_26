@@ -10,13 +10,13 @@
 	<header class="navbar navbar-default">
         <h3 class="pull-left">Emploi du Temps</h3>
         <ul class="list-inline nav navbar-nav pull-right">
-            <li class="active"><a href="{% url 'administration' %}">Administration</a></li>
-            <li><a href="{% url 'etudiant' %}">Etudiant</a></li>
+            <li><a href="{% url 'administration' %}">Administration</a></li>
+            <li class="active"><a href="{% url 'etudiant' %}">Etudiant</a></li>
         </ul>
     </header>
 	<section>
 		<div class="container jumbotron inscrit" style="width: 50%;margin-top: 50px;">
-			<h2>Connexion administration</h2>
+			<h2>Connexion Etudiant(e)</h2>
 			<nav class="">
                 <form method="post" class="col-lg-6">
                     {%csrf_token%}

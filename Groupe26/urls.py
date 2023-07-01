@@ -42,6 +42,7 @@ urlpatterns = [
     path('semsestre5/',views.semestre5,name='semestre5'),
     path('semsestre6/',views.semestre6,name='semestre6'),
     path('',views.administration,name='administration'),
+    path('etudiant/',views.etudian,name='etudiant'),
     path('mdp/',views.mdp,name='mdp'),
   
 ]
