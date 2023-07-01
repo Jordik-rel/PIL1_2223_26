@@ -17,5 +17,5 @@ class administrateur(admin.ModelAdmin):
 
 @admin.register(etudiant)
 class etudiant(admin.ModelAdmin):
-    list_display=('Num_Matricule','Mot_De_Passe')
+    list_display=('Num_Matricule','Mot_De_Passe','semestres')
 # Register your models here.

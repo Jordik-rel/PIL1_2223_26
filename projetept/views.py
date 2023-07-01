@@ -194,14 +194,17 @@ def mdp(request):
 
 def administration(request):
   formulaire=administrat
+  message=''
   if request.method== 'POST':
      formulaire=administrat(request.POST)
      utilisateur=request.POST['Num_Matricule']
      psw=request.POST['Mot_De_Passe']
      if administrations.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw).exists():
        return redirect('adm')
+     else:
+      message='erreur, Vous n\'etes pas dans la base de donnée'
      
-  return render(request,'projetept/index.html',{'etud':formulaire})
+  return render(request,'projetept/index.html',{'etud':formulaire,'erreur':message})
 
 def etudian(request):
   formulaire=etudiants_connexion
@@ -210,17 +213,17 @@ def etudian(request):
      utilisateur=request.POST['Num_Matricule']
      psw=request.POST['Mot_De_Passe']
      if etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw).exists():
-       if etudiant.objects.filter(semestres='1').exists():
+       if etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='1').exists():
         return redirect('licence1')
-       if etudiant.objects.filter(semestres='2').exists():
+       elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='2').exists():
         return redirect('licence1')
-       if etudiant.objects.filter(semestres='3').exists():
+       elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='3').exists():
         return redirect('licence2')
-       if etudiant.objects.filter(semestres='4').exists():
+       elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='4').exists():
         return redirect('licence2')
-       if etudiant.objects.filter(semestres='5').exists():
+       elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='5').exists():
         return redirect('licence3')
-       if etudiant.objects.filter(semestres='5').exists():
+       elif etudiant.objects.filter(Num_Matricule=utilisateur, Mot_De_Passe=psw , semestres='6').exists():
         return redirect('licence3')
      
   return render(request,'projetept/index2.html',{'etud':formulaire})
